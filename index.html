@@ -55,6 +55,7 @@
 <body>
 <div id="app">
    <div class="suc-main-index" >
+
        <div class="main-box" v-for="(item,index) in mySites" :key="index">
            <i :class="item.icon"></i>
            <span slot="title"><a style="text-decoration: none;color:#42b983;" :href="item.path" target="_blank">{{item.name}}</a></span>
@@ -113,18 +114,29 @@
             admin:false,
             theme:"linear-gradient(to left bottom, hsl(133, 100%, 85%) 0%,hsl(234, 100%, 85%) 100%)",
             mySites:[
-                {name:"blog",path:"https://wangsrbus.cn",icon:"el-icon-edit"},
-                {name:"media-play",path:"https://media.wangsrbus.cn",icon:"el-icon-video-camera-solid"},
-                {name:"monitoring",path:"https://status.wangsrbus.cn",icon:"el-icon-bell"},
-                {name:"wechat-doc",path:"https://mbhdoc.wangsrbus.cn",icon:"el-icon-link"},
-                {name:"markdown-online",path:"https://md.wangsrbus.cn",icon:"el-icon-edit-outline"},
-            ]
+                {name:"博客",path:"https://wangsrbus.cn",icon:"el-icon-edit"},
+                {name:"个人直播室",path:"https://media.wangsrbus.cn",icon:"el-icon-video-camera-solid"},
+                {name:"monitoring",path:"https://status.wangsrbus.cn/status/main",icon:"el-icon-bell"},
+                {name:"博客小程序官网",path:"https://mbhdoc.wangsrbus.cn",icon:"el-icon-link"},
+                {name:"在线markdown编辑器",path:"https://md.wangsrbus.cn",icon:"el-icon-edit-outline"},
+            ],
+            timer:undefined,
 
         },
         created: function (){
-
+            clearInterval(this.timer)
+            this.$notify({
+                title: '微信小程序端博客',
+                duration: 0,
+                type: 'success',
+                dangerouslyUseHTMLString: true,
+                message: '<img height="100" width="100" src="img/wechat-q-code.jpg">'
+            });
         },
         methods:{
+            showNotification(title) {
+
+            }
 
         }
 
