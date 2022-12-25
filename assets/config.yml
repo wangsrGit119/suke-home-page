@@ -1,0 +1,138 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/v5/search for icons options
+
+# Optional: Use external configuration file.
+# Using this will ignore remaining config in this file
+# externalConfig: https://example.com/server-luci/config.yaml
+
+title: "suke’s home"
+subtitle: "疯疯癫癫的小蚂蚁"
+documentTitle: "suke’s home" # Customize the browser tab text
+logo: "assets/icons/logo.png"
+header: false # Set to false to hide the header
+# Optional: Different hotkey for search, defaults to "/"
+# hotkey:
+#   search: "Shift"
+footer: '2021@<a href="https://github.com/wangsrGit119">疯疯癫癫的小蚂蚁<i class="fab fa-github-alt"></i></a>' # set false if you want to hide it.
+
+columns: "3" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example).
+# You should set it to true when using an authentication proxy, it also reloads the page when a redirection is detected when checking connectivity.
+
+# Optional: Proxy / hosting option
+proxy:
+  useCredentials: false # send cookies & authorization headers when fetching service specific data. Set to `true` if you use an authentication proxy. Can be overrided on service level.
+
+# Set the default layout and color scheme
+defaults:
+  layout: columns # Either 'columns', or 'list'
+  colorTheme: auto # One of 'auto', 'light', or 'dark'
+
+# Optional theming
+theme: default # 'default' or one of the themes available in 'src/assets/themes'.
+
+# Optional custom stylesheet
+# Will load custom CSS files. Especially useful for custom icon sets.
+# stylesheet:
+#   - "assets/custom.css"
+
+# Here is the exhaustive list of customization parameters
+# However all value are optional and will fallback to default if not set.
+# if you want to change only some of the colors, feel free to remove all unused key.
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#424242"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link: "#3273dc"
+    link-hover: "#363636"
+    background-image: "assets/bg/light.jpg"
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link: "#3273dc"
+    link-hover: "#ffdd57"
+    background-image: "assets/bg/dark.jpg"
+
+# Optional message
+message:
+  # url: "https://<my-api-endpoint>" # Can fetch information from an endpoint to override value below.
+  # mapping: # allows to map fields from the remote format to the one expected by Homer
+  #   title: 'id' # use value from field 'id' as title
+  #   content: 'value' # value from field 'value' as content
+  # refreshInterval: 10000 # Optional: time interval to refresh message
+  #
+  # Real example using chucknorris.io for showing Chuck Norris facts as messages:
+  # url: https://api.chucknorris.io/jokes/random
+  # mapping:
+  #   title: 'id'
+  #   content: 'value'
+  # refreshInterval: 10000
+  style: "is-success"
+  title: "Hi guys!"
+  icon: "fa fa-exclamation-triangle"
+  content: '<p>小程序端访问请用微信扫描下面二维码</p><img height="100" width="100" src="assets/img/wechat-q-code.jpg">'
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  - name: "Github"
+    icon: "fab fa-github"
+    url: "https://github.com/wangsrGit119"
+    target: "_blank" # optional html tag target attribute
+  - name: "Blog"
+    icon: "fas fa-book"
+    url: "https://blog.wangsrbus.cn/"
+    target: "_blank"
+
+# Services
+# First level array represents a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "常用"
+    logo: "assets/img/application.png"
+    items:
+      - name: "简易在线会议室"
+        logo: "assets/img/meeting.png"
+        subtitle: "临时会议快速入会（WebRTC）"
+        keywords: "WebRTC,meeting" # optional keyword used for searching purpose
+        url: "https://nrtc.wangsrbus.cn"
+        target: "_blank"
+      - name: "Mini-blog-halo文档"
+        logo: "assets/img/document.png"
+        subtitle: "Mini-blog-halo 小程序端博客文档"
+        tagstyle: "is-success"
+        url: "https://mbhdoc.wangsrbus.cn/#/"
+        target: "_blank"
+      - name: "WebRTC完整系列教程"
+        logo: "assets/img/course.png"
+        subtitle: "WebRTC,SRS,Janus 打造私有化会议系统教程"
+        keywords: "webrtc,WebRTC,SRS,Janus"
+        url: "https://s.juejin.cn/ds/htTM5ow/"
+        target: "_blank"
+  - name: "工具"
+    logo: "assets/img/tools.png"
+    items:
+      - name: "MD在线编辑器"
+        logo: "assets/img/markdown-fill.png"
+        subtitle: "常用工具" # optional, if no subtitle is defined, PiHole statistics will be shown
+        url: "https://md.wangsrbus.cn/"
+        target: "_blank" # optional html a tag target attribute
+        # class: "green" # optional custom CSS class for card, useful with custom stylesheet
+        # background: red # optional color for card to set color directly without custom stylesheet
